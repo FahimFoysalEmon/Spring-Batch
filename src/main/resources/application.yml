@@ -1,0 +1,38 @@
+#server.port=8086
+#
+#
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.defer-datasource-initialization=true
+#spring.datasource.url=jdbc:postgresql://localhost:5432/spring-batch
+#spring.datasource.username=postgres
+#spring.datasource.password=12345678
+#spring.jpa.show-sql=false
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.hibernate.ddl-auto=update
+#
+#spring.batch.jdbc.initialize-schema=always
+#spring.batch.job.enabled=false
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring-batch
+    username: postgres
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  batch:
+    jdbc:
+      initialize-schema: ALWAYS
+    job:
+      enabled: false
+server:
+  port: 8086
